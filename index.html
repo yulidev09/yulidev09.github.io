@@ -1,12 +1,11 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-width=1.0">
     <title>Yulianny Guerra | Game & Software Developer</title>
     <style>
-        
+       
         body { 
             background-color: #1e1e2e; 
             color: #cdd6f4; 
@@ -24,27 +23,58 @@
         }
         
        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #cba6f7;
+            margin-bottom: 20px;
+        }
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #45475a;
+        }
+
+      
         .hero { 
             min-height: 85vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
+            align-items: flex-start;
         }
         .hero h1 { font-size: clamp(40px, 8vw, 70px); margin: 0; color: #b4befe; }
         .hero h2 { font-size: clamp(30px, 6vw, 55px); margin: 0; color: #a6adc8; }
         
-        
+       
+        .contact-links { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 15px; }
+        .contact-links a {
+            color: #cba6f7;
+            border: 1px solid #cba6f7;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .contact-links a:hover { background: #313244; }
+
+     
         .project-card { 
             background: #313244; 
             padding: 30px; 
             border-radius: 8px; 
-            margin-bottom: 25px; 
+            margin-bottom: 35px; 
             transition: transform 0.2s;
             border: 1px solid #45475a;
         }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
+        .project-card:hover { transform: translateY(-5px); }
         
         
         .tech-list { 
@@ -58,8 +88,8 @@
             color: #a6e3a1; 
         }
 
-      
-        a { 
+       
+        .simple-link { 
             color: #cba6f7; 
             text-decoration: none; 
             font-size: 14px; 
@@ -67,13 +97,26 @@
             display: inline-block; 
             transition: color 0.2s; 
         }
-        a:hover { color: #b4befe; }
+        .simple-link:hover { color: #b4befe; }
+
+   
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-       
-        <section class="hero">
+      
+        <section class="hero fade-in">
+            <img src="perfil.jpg" alt="Yulianny Guerra" class="profile-img">
+            
             <p class="accent">Hola, mi nombre es</p>
             <h1>Yulianny Guerra.</h1>
             <h2>Construyo arquitecturas de código y experiencias interactivas.</h2>
@@ -81,14 +124,20 @@
                 Soy Lead Programmer y Game Designer (yulidev) especializada en <b>Unity, C# y Meta XR</b>. 
                 Actualmente desarrollo sistemas y arquitecturas de datos en <i>Malagueta Game Studio</i> y simulaciones inmersivas en <i>SimTech Interaction VR</i>.
             </p>
+            
+            <div class="contact-links">
+                <a href="mailto:yuliannysoto4@gmail.com">yuliannysoto4@gmail.com</a>
+                <a href="https://www.linkedin.com/in/yulianny-guerra-74188b352" target="_blank">LinkedIn</a>
+            </div>
         </section>
 
-        
+     
         <section id="projects">
-            <h2><span class="accent">01.</span> Juegos Publicados</h2>
+            <h2 class="fade-in"><span class="accent">01.</span> Juegos Publicados</h2>
             
-          
-            <div class="project-card">
+           
+            <div class="project-card fade-in">
+                <img src="mixtape.png" alt="Mixtape Game" class="project-img">
                 <h3 class="accent" style="font-size: 14px; margin-bottom: 5px;">GBJam - Puzzle 2D</h3>
                 <h2 style="margin-top: 0;">Mixtape</h2>
                 <p>
@@ -100,11 +149,12 @@
                     <li>Audio Mixer API</li>
                     <li>WebGL</li>
                 </ul>
-                <a href="https://yuli-dev.itch.io/mixtape" target="_blank">Jugar en itch.io →</a>
+                <a href="https://yuli-dev.itch.io/mixtape" target="_blank" class="simple-link">Jugar en itch.io →</a>
             </div>
 
-            
-            <div class="project-card">
+           
+            <div class="project-card fade-in">
+                <img src="fulljaus.png" alt="Full Jaus Game" class="project-img">
                 <h3 class="accent" style="font-size: 14px; margin-bottom: 5px;">Party Game 3D</h3>
                 <h2 style="margin-top: 0;">Full Jaus</h2>
                 <p>
@@ -116,12 +166,12 @@
                     <li>Input System</li>
                     <li>Físicas</li>
                 </ul>
-               
-                <a href="https://yuli-dev.itch.io/" target="_blank">Ver en itch.io →</a>
+                <a href="https://yuli-dev.itch.io/" target="_blank" class="simple-link">Ver en itch.io →</a>
             </div>
 
-            
-            <div class="project-card">
+       
+            <div class="project-card fade-in">
+                <img src="trastorno.png" alt="Trastorno Game" class="project-img">
                 <h3 class="accent" style="font-size: 14px; margin-bottom: 5px;">Terror Psicológico</h3>
                 <h2 style="margin-top: 0;">Trastorno</h2>
                 <p>
@@ -133,10 +183,24 @@
                     <li>Post-Processing</li>
                     <li>Lighting</li>
                 </ul>
-                
-                <a href="https://yuli-dev.itch.io/" target="_blank">Ver en itch.io →</a>
+                <a href="https://yuli-dev.itch.io/" target="_blank" class="simple-link">Ver en itch.io →</a>
             </div>
         </section>
     </div>
+
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
