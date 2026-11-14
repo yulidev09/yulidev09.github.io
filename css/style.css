@@ -1,11 +1,11 @@
 :root {
-    --bg-base: #0b0b10;
-    --bg-surface: #14131c;
-    --bg-card: #191824;
+    --bg-base: #120e1a;
+    --bg-surface: rgba(20, 17, 29, 0.72);
+    --bg-card: rgba(26, 22, 38, 0.78);
     --border-subtle: rgba(255, 255, 255, 0.09);
     --border-warm: rgba(232, 93, 63, 0.42);
     --text-primary: #ffffff;
-    --text-secondary: #a8a6b8;
+    --text-secondary: #b8b4c8;
     --accent-lavender: #cba6f7;
     --accent-coral: #e85d3f;
     --accent-plum: #4a1d3d;
@@ -18,11 +18,37 @@
 
 body {
     background-color: var(--bg-base);
+    background-image:
+        radial-gradient(circle at 82% 14%, rgba(232, 93, 63, 0.68) 0%, transparent 44%),
+        radial-gradient(circle at 16% 24%, rgba(145, 58, 128, 0.56) 0%, transparent 48%),
+        radial-gradient(circle at 85% 58%, rgba(232, 93, 63, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 15% 75%, rgba(118, 44, 98, 0.42) 0%, transparent 52%),
+        linear-gradient(180deg, #1b1326 0%, #2d162b 22%, #171222 55%, #1d1324 82%, #120e1a 100%);
+    background-attachment: scroll;
     color: var(--text-primary);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     margin: 0;
     overflow-x: hidden;
+    position: relative;
+}
+
+.continuous-grid {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 7% 28.6% 28.8% 28.6% 7%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.continuous-grid span {
+    border-right: 1px solid rgba(255, 255, 255, 0.065);
+    height: 100%;
+}
+
+.continuous-grid span:last-child {
+    border-right: none;
 }
 
 .studio-side-rail {
@@ -39,9 +65,8 @@ body {
     font-size: 11px;
     letter-spacing: 1.8px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.62);
     text-decoration: none;
-    pointer-events: auto;
     transition: color 0.2s;
 }
 
@@ -60,17 +85,12 @@ body {
 .hero-editorial {
     position: relative;
     width: 100%;
-    min-height: 92vh;
-    background:
-        radial-gradient(circle at 50% 60%, rgba(15, 12, 22, 0.72) 0%, transparent 55%),
-        radial-gradient(circle at 82% 28%, rgba(232, 93, 63, 0.75) 0%, transparent 52%),
-        radial-gradient(circle at 18% 45%, rgba(145, 58, 128, 0.6) 0%, transparent 55%),
-        linear-gradient(160deg, #1b1326 0%, #3b1c32 45%, #7a2e25 100%);
-    border-bottom: 1px solid var(--border-subtle);
+    min-height: 94vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    z-index: 1;
 }
 
 .grid-overlay {
@@ -84,7 +104,6 @@ body {
 }
 
 .grid-cell {
-    border-right: 1px solid rgba(255, 255, 255, 0.07);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     position: relative;
 }
@@ -96,7 +115,7 @@ body {
     right: -4px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.38);
+    color: rgba(255, 255, 255, 0.42);
     line-height: 1;
 }
 
@@ -191,7 +210,7 @@ body {
 
 .watermark-bg {
     position: absolute;
-    top: 2%;
+    top: 1%;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Inter', sans-serif;
@@ -199,7 +218,7 @@ body {
     font-size: clamp(92px, 18.5vw, 260px);
     line-height: 0.82;
     letter-spacing: -0.04em;
-    color: rgba(0, 0, 0, 0.26);
+    color: rgba(0, 0, 0, 0.28);
     white-space: nowrap;
     user-select: none;
     pointer-events: none;
@@ -211,15 +230,15 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: clamp(320px, 36vw, 480px);
-    height: 88%;
+    width: clamp(380px, 44vw, 580px);
+    height: 94%;
     z-index: 3;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
 }
 
 .portrait-center img {
@@ -227,7 +246,7 @@ body {
     height: 100%;
     object-fit: contain;
     object-position: center bottom;
-    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.55));
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
 }
 
 .hero-middle-row {
@@ -236,11 +255,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 95px;
+    margin-top: 90px;
 }
 
 .hero-statement {
-    max-width: 290px;
+    max-width: 280px;
     font-size: 12px;
     font-weight: 600;
     line-height: 1.55;
@@ -301,8 +320,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 24px;
     margin-top: auto;
     padding-top: 70px;
+}
+
+.hero-display-name {
+    max-width: 68%;
 }
 
 .hero-display-name .copyright {
@@ -311,19 +335,19 @@ body {
     font-size: 13px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.92);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .hero-display-name h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 900;
-    font-size: clamp(54px, 8.2vw, 114px);
-    line-height: 0.88;
-    letter-spacing: -0.04em;
+    font-size: clamp(38px, 5.4vw, 76px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
     margin: 0;
     color: #ffffff;
     text-transform: uppercase;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .talk-widget {
@@ -335,6 +359,7 @@ body {
     align-items: center;
     gap: 12px;
     min-width: 250px;
+    flex-shrink: 0;
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
     text-decoration: none;
     color: #ffffff;
@@ -404,9 +429,11 @@ body {
 }
 
 .container {
+    position: relative;
+    z-index: 2;
     max-width: 1220px;
     margin: 0 auto;
-    padding: 55px 32px 95px;
+    padding: 25px 32px 95px;
 }
 
 .brands-strip {
@@ -416,7 +443,8 @@ body {
     align-items: center;
     gap: 20px;
     padding: 24px 32px;
-    background: linear-gradient(135deg, rgba(59, 28, 50, 0.35), rgba(232, 93, 63, 0.14));
+    background: rgba(25, 18, 34, 0.65);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border-warm);
     border-radius: 18px;
     margin-bottom: 85px;
@@ -440,7 +468,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 255, 255, 0.78);
     letter-spacing: 0.6px;
 }
 
@@ -464,7 +492,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    background: rgba(232, 93, 63, 0.14);
+    background: rgba(232, 93, 63, 0.16);
     border: 1px solid var(--border-warm);
     color: #f7c5b8;
     font-family: 'JetBrains Mono', monospace;
@@ -493,7 +521,7 @@ body {
 
 .skills-header h2 span {
     display: block;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.48);
 }
 
 .skills-stagger-grid {
@@ -505,7 +533,8 @@ body {
 }
 
 .skill-card {
-    background: linear-gradient(180deg, #161421 0%, #0f0e16 100%);
+    background: rgba(17, 14, 26, 0.84);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border-subtle);
     border-radius: 16px;
     padding: 30px 24px;
@@ -553,7 +582,8 @@ body {
 }
 
 .gamified-showcase {
-    background: linear-gradient(145deg, rgba(59, 28, 50, 0.28), rgba(232, 93, 63, 0.1));
+    background: rgba(26, 17, 34, 0.72);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border-warm);
     border-radius: 22px;
     padding: 32px;
@@ -590,7 +620,7 @@ body {
 }
 
 .brand-work-card {
-    background: #12111a;
+    background: rgba(14, 12, 22, 0.85);
     border: 1px solid var(--border-subtle);
     border-radius: 14px;
     overflow: hidden;
@@ -653,9 +683,10 @@ body {
 .portfolio-section-themed {
     position: relative;
     background:
-        radial-gradient(circle at 85% 15%, rgba(232, 93, 63, 0.22) 0%, transparent 45%),
-        radial-gradient(circle at 12% 75%, rgba(92, 36, 75, 0.34) 0%, transparent 50%),
-        #12111a;
+        radial-gradient(circle at 85% 15%, rgba(232, 93, 63, 0.24) 0%, transparent 45%),
+        radial-gradient(circle at 12% 75%, rgba(92, 36, 75, 0.36) 0%, transparent 50%),
+        rgba(18, 15, 28, 0.78);
+    backdrop-filter: blur(14px);
     border: 1px solid var(--border-warm);
     border-radius: 28px;
     padding: 46px 42px;
@@ -695,8 +726,8 @@ body {
 }
 
 .filter-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     color: var(--text-secondary);
     padding: 8px 16px;
     border-radius: 999px;
@@ -770,7 +801,7 @@ body {
 }
 
 .project-content p {
-    color: #c8c4d6;
+    color: #d2cee0;
     font-size: 14.5px;
     line-height: 1.6;
     margin: 0 0 22px 0;
@@ -790,8 +821,8 @@ body {
     font-size: 12.5px;
     font-weight: 500;
     color: #f3e8ee;
-    background: rgba(232, 93, 63, 0.14);
-    border: 1px solid rgba(232, 93, 63, 0.28);
+    background: rgba(232, 93, 63, 0.16);
+    border: 1px solid rgba(232, 93, 63, 0.3);
     padding: 7px 14px;
     border-radius: 6px;
 }
@@ -901,4 +932,275 @@ body {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(120deg, rgba(35, 14
+        linear-gradient(120deg, rgba(35, 14, 30, 0.88) 0%, rgba(168, 56, 36, 0.78) 52%, rgba(14, 18, 28, 0.92) 100%);
+    z-index: 1;
+}
+
+.contact-form-card {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    color: #111116;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+}
+
+.contact-card-banner {
+    height: 112px;
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at 80% 30%, #e85d3f 0%, transparent 60%),
+        linear-gradient(135deg, #221226 0%, #5e2135 55%, #b8422b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contact-card-banner sup {
+    font-size: 10px;
+    margin-left: 2px;
+}
+
+.contact-form-body {
+    padding: 0 14px 14px;
+}
+
+.contact-form-body h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0 0 18px 0;
+    color: #111116;
+}
+
+.form-group {
+    margin-bottom: 13px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #272730;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: #f3f3f6;
+    border: 1px solid #e2e2e8;
+    border-radius: 7px;
+    padding: 10px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: #111116;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-coral);
+}
+
+.form-group textarea {
+    min-height: 76px;
+    resize: vertical;
+}
+
+.submit-msg-btn {
+    width: 100%;
+    background: #0d0d12;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background 0.2s;
+}
+
+.submit-msg-btn:hover {
+    background: var(--accent-coral);
+}
+
+.contact-right-copy {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 16px 0;
+}
+
+.contact-pill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    background: #ffffff;
+    color: #111116;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 5px;
+    margin-bottom: 18px;
+}
+
+.contact-pill-tag span {
+    color: var(--accent-coral);
+}
+
+.contact-right-copy h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: clamp(36px, 4.8vw, 62px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 28px 0;
+}
+
+.contact-direct-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 42px;
+}
+
+.contact-direct-links a,
+.contact-direct-links button {
+    background: rgba(11, 11, 16, 0.72);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.contact-direct-links a:hover,
+.contact-direct-links button:hover {
+    background: #ffffff;
+    color: #111116;
+}
+
+.contact-bottom-note .spark {
+    color: var(--accent-coral);
+    font-size: 18px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact-bottom-note strong {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.contact-bottom-note p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 340px;
+    margin: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1120px) {
+    .studio-side-rail {
+        display: none;
+    }
+    .project-card {
+        grid-template-columns: 90px 1fr 390px;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 920px) {
+    .nav-links {
+        display: none;
+    }
+    .hero-editorial {
+        min-height: auto;
+    }
+    .portrait-center {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 320px;
+        height: 360px;
+        margin: 20px auto 0;
+    }
+    .hero-display-name {
+        max-width: 100%;
+    }
+    .hero-middle-row,
+    .hero-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        margin-top: 24px;
+        padding-top: 10px;
+    }
+    .skills-stagger-grid,
+    .gamified-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .skill-card:nth-child(2),
+    .skill-card:nth-child(4) {
+        margin-top: 0;
+    }
+    .portfolio-section-themed {
+        padding: 32px 22px;
+    }
+    .project-card {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .project-img-box {
+        height: 250px;
+    }
+    .contact-editorial {
+        grid-template-columns: 1fr;
+        padding: 32px 22px;
+        gap: 34px;
+    }
+}
+
+@media (max-width: 560px) {
+    .skills-stagger-grid,
+    .gamified-grid {
+        grid-template-columns: 1fr;
+    }
+}
