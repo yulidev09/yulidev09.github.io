@@ -27,13 +27,26 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("senderName").value.trim();
+            const email = document.getElementById("senderEmail").value.trim();
+            const message = document.getElementById("senderMsg").value.trim();
+            const subject = encodeURIComponent(`Contacto Portafolio YuliDev - ${name}`);
+            const body = encodeURIComponent(`Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`);
+            window.location.href = `mailto:yuliannysoto4@gmail.com?subject=${subject}&body=${body}`;
+        });
+    }
 });
 
 function copyEmail() {
     navigator.clipboard.writeText("yuliannysoto4@gmail.com");
     const btn = document.getElementById("copyBtn");
-    btn.textContent = "¡Correo copiado al portapapeles! ✓";
+    btn.textContent = "¡Correo copiado! ✓";
     setTimeout(() => {
-        btn.textContent = "Copiar: yuliannysoto4@gmail.com";
+        btn.textContent = "yuliannysoto4@gmail.com";
     }, 2500);
 }
