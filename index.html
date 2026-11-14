@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YuliDev | Unity & XR/VR Developer</title>
     <style>
-        
+       
         :root {
             --bg-main: #1e1e2e;
             --bg-card: #313244;
@@ -33,7 +33,7 @@
             padding: 50px 20px; 
         }
 
-       
+        
         .hero-card {
             background: var(--bg-card);
             border: 2px solid var(--border-color);
@@ -120,7 +120,7 @@
             color: var(--accent-purple);
         }
 
-    
+     
         .section-title {
             font-size: 32px;
             color: #f5e0dc;
@@ -136,7 +136,7 @@
             font-size: 20px;
         }
 
-      
+        
         .project-card {
             background: var(--bg-card);
             border: 2px solid var(--border-color);
@@ -238,7 +238,7 @@
             display: block;
         }
 
-      
+       
         .fade-in {
             opacity: 0;
             transform: translateY(25px);
@@ -268,10 +268,10 @@
 </head>
 <body>
     <div class="container">
-        
+       
         <section class="hero-card fade-in">
             <div class="hero-img-box">
-                <img src="perfil.jpg" alt="YuliDev">
+                <img src="yo.jpg" alt="YuliDev">
             </div>
             <div class="hero-info">
                 <p class="greeting">Hola, soy</p>
@@ -289,7 +289,7 @@
             </div>
         </section>
 
-     
+      
         <section id="portfolio">
             <h2 class="section-title fade-in"><span>01.</span> Portfolio</h2>
 
@@ -314,7 +314,7 @@
                     </a>
                 </div>
                 <div class="project-img-box">
-                    <img src="amnesia.png" alt="Amnesia">
+                    <img src="Amnesia.png" alt="Amnesia">
                 </div>
             </article>
 
@@ -339,11 +339,11 @@
                     </a>
                 </div>
                 <div class="project-img-box">
-                    <img src="mixtape.png" alt="Mixtape">
+                    <img src="Mixtape.jgp.jpeg" alt="Mixtape">
                 </div>
             </article>
 
-       
+         
             <article class="project-card fade-in">
                 <div class="project-content">
                     <div>
@@ -364,6 +364,49 @@
                     </a>
                 </div>
                 <div class="project-img-box">
-                    <img src="fulljaus.png" alt="Full Jaus">
+                    <img src="6WFiFC.png" alt="Full Jaus">
                 </div>
-            </
+            </article>
+
+        
+            <article class="project-card fade-in">
+                <div class="project-content">
+                    <div>
+                        <p class="project-tag">Terror Psicológico 3D</p>
+                        <h3>Trastorno</h3>
+                        <p>
+                            Experiencia de terror atmosférico en primera persona con iluminación dinámica, audio espacial y efectos de post-procesado personalizados.
+                        </p>
+                        <ul class="tech-list">
+                            <li>Unity 3D</li>
+                            <li>C#</li>
+                            <li>Post-Processing</li>
+                            <li>Lighting</li>
+                        </ul>
+                    </div>
+                    <a href="https://yuli-dev.itch.io/" target="_blank" class="itch-banner-btn">
+                        Ver en itch.io →
+                    </a>
+                </div>
+                <div class="project-img-box">
+                    <img src="Trastorno.jpg" alt="Trastorno">
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
