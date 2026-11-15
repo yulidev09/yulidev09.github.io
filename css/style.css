@@ -1192,3 +1192,49 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.hero-left-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.showcase-pill.trust-card .showcase-pill-img img {
+    object-position: center top;
+}
+
+.contact-trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #111116;
+    padding: 8px 14px 8px 8px;
+    border-radius: 10px;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+    margin-bottom: 24px;
+    align-self: flex-start;
+}
+
+.contact-trust-badge img {
+    width: 44px;
+    height: 44px;
+    border-radius: 7px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.contact-trust-badge strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.contact-trust-badge span {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: #52525b;
+}
