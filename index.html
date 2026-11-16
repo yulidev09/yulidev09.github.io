@@ -9,6 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=6">
     <link rel="stylesheet" href="css/sections.css?v=3">
+    <style>
+        
+        .contact-simple { position: relative; overflow: hidden; margin-top: 90px; padding: 72px 32px; text-align: center; border: 1px solid rgba(255,255,255,0.18); border-radius: 28px; background: #1a1220; }
+        .contact-bg-collage { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); z-index: 0; }
+        .contact-bg-collage img { width: 100%; height: 100%; object-fit: cover; display: block; filter: blur(3px) saturate(1.15); transform: scale(1.05); }
+        .contact-bg-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(120deg, rgba(35,14,30,0.78) 0%, rgba(168,56,36,0.62) 52%, rgba(14,18,28,0.82) 100%); }
+        .contact-simple-inner { position: relative; z-index: 2; }
+        .contact-pill-tag { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: #111116; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 5px 11px; border-radius: 5px; margin: 0 auto 18px; }
+        .contact-pill-tag span { color: #e85d3f; }
+        .contact-simple h2 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(36px, 5vw, 56px); letter-spacing: -0.03em; text-transform: uppercase; color: #fff; text-shadow: 0 8px 28px rgba(0,0,0,0.45); margin: 0 0 14px; }
+        .contact-simple p { color: rgba(255,255,255,0.9); font-size: 15px; max-width: 480px; margin: 0 auto 30px; }
+        .contact-simple .contact-direct-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 0; }
+        .contact-simple .contact-direct-links a, .contact-simple .contact-direct-links button { background: rgba(11,11,16,0.72); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; padding: 10px 16px; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.2s; }
+        .contact-simple .contact-direct-links a:hover, .contact-simple .contact-direct-links button:hover { background: #fff; color: #111116; }
+
+        .hero-left-stack { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+        .showcase-pill { display: block; }
+        .hero-left-stack .showcase-pill, .showcase-pill.trust-card { width: 182px; flex-shrink: 0; }
+    </style>
 </head>
 <body>
 
