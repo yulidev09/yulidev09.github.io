@@ -213,6 +213,7 @@
     background: #e85d3f;
 }
 
+/* ===== CONTACTO SIMPLE ===== */
 
 .contact-simple {
     position: relative;
@@ -251,6 +252,24 @@
 .contact-simple-inner {
     position: relative;
     z-index: 2;
+}
+
+.contact-pill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    color: #111116;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 5px;
+    margin-bottom: 18px;
+}
+
+.contact-pill-tag span {
+    color: #e85d3f;
 }
 
 .contact-simple .contact-pill-tag {
@@ -308,7 +327,7 @@
     margin-bottom: 0;
 }
 
-
+/* ===== HERO: tarjeta de foto (refuerzo) ===== */
 
 .hero-left-stack {
     display: flex;
