@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+   
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
-
+   
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -37,7 +37,7 @@ function copyEmail() {
     const btn = document.getElementById("copyBtn");
 
     navigator.clipboard.writeText(email).then(() => {
-        btn.textContent = "¡Correo copiado! ✓";
+        btn.textContent = "Email copied! ✓";
         setTimeout(() => {
             btn.textContent = email;
         }, 2500);
