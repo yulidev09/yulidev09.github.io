@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css?v=6">
     <link rel="stylesheet" href="css/sections.css?v=3">
     <style>
-        
+        /* ===== Contact (collage background) + hero card fix ===== */
         .contact-simple { position: relative; overflow: hidden; margin-top: 90px; padding: 72px 32px; text-align: center; border: 1px solid rgba(255,255,255,0.18); border-radius: 28px; background: #1a1220; }
         .contact-bg-collage { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); z-index: 0; }
         .contact-bg-collage img { width: 100%; height: 100%; object-fit: cover; display: block; filter: blur(3px) saturate(1.15); transform: scale(1.05); }
@@ -27,6 +27,30 @@
         .hero-left-stack { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
         .showcase-pill { display: block; }
         .hero-left-stack .showcase-pill, .showcase-pill.trust-card { width: 182px; flex-shrink: 0; }
+
+        /* ===== Education ===== */
+        .edu-section { margin-bottom: 105px; }
+        .edu-card { display: flex; align-items: center; gap: 28px; max-width: 860px; margin: 0 auto; padding: 32px 36px; background: rgba(14,11,22,0.72); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.14); border-radius: 22px; transition: border-color 0.3s ease; }
+        .edu-card:hover { border-color: #e85d3f; }
+        .edu-badge { flex-shrink: 0; width: 84px; height: 84px; border-radius: 16px; background: linear-gradient(135deg, #3b1c32, #e85d3f); display: flex; align-items: center; justify-content: center; font-size: 34px; color: #fff; }
+        .edu-label { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #e85d3f; margin-bottom: 8px; }
+        .edu-body h3 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(18px, 2.4vw, 24px); line-height: 1.15; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; margin: 0 0 8px; }
+        .edu-school { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #cdc8dc; margin: 0; }
+
+        /* ===== Featured video (Spaceforward) ===== */
+        .featured-video { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; margin-top: 90px; padding: 46px 42px; background: rgba(14,11,22,0.68); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.14); border-radius: 28px; }
+        .featured-copy { text-align: left; }
+        .featured-copy h2 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(34px, 4.4vw, 54px); line-height: 0.98; letter-spacing: -0.03em; text-transform: uppercase; color: #fff; margin: 0 0 16px; }
+        .featured-copy p { color: #dfdbe9; font-size: 14.5px; line-height: 1.6; margin: 0; }
+        .video-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.18); background: linear-gradient(135deg, #2b1628, #6b2923); box-shadow: 0 24px 48px -18px rgba(0,0,0,0.75); }
+        .video-frame video, .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; background: #000; }
+        .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.8); text-align: center; padding: 16px; }
+        .video-placeholder .play { display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 50%; background: #e85d3f; color: #fff; font-size: 20px; }
+
+        @media (max-width: 920px) {
+            .edu-card { flex-direction: column; text-align: center; padding: 28px 22px; }
+            .featured-video { grid-template-columns: 1fr; padding: 32px 22px; gap: 28px; }
+        }
     </style>
 </head>
 <body>
@@ -79,7 +103,7 @@
                 <a href="#portfolio">Work</a>
                 <a href="#contacto">Contact</a>
             </div>
-            <a href="#contacto" class="menu-trigger" aria-label="Contacto">
+            <a href="#contacto" class="menu-trigger" aria-label="Contact">
                 <span></span>
                 <span></span>
             </a>
@@ -131,7 +155,7 @@
                     </div>
                     <div class="talk-info">
                         <div class="talk-top">
-                            <span>Let's Talk</span>
+                            <span>Let’s Talk</span>
                             <span>✳</span>
                         </div>
                         <strong>Yulianny Guerra</strong>
@@ -146,7 +170,7 @@
     <div class="container">
 
         <div class="brands-strip fade-in">
-            <div class="brands-label">Estudios &amp; Experiencias Gamificadas</div>
+            <div class="brands-label">Studios &amp; Gamified Experiences</div>
             <div class="brands-list">
                 <span>MALAGUETA GAME STUDIO</span>
                 <span>SIMTECH VR</span>
@@ -169,7 +193,7 @@
                     <div class="skill-icon">✦</div>
                     <div>
                         <h3>Unity &amp; C# Architecture</h3>
-                        <p>Diseño de sistemas modulares, máquinas de estado, ScriptableObjects y código limpio escalable en Unity 6, URP y WebGL.</p>
+                        <p>Modular system design, state machines, ScriptableObjects and clean, scalable code in Unity 6, URP and WebGL.</p>
                     </div>
                 </div>
 
@@ -177,7 +201,7 @@
                     <div class="skill-icon">✳</div>
                     <div>
                         <h3>XR / VR Development</h3>
-                        <p>Simuladores interactivos de entrenamiento técnico y diagnóstico con Meta XR SDK en SimTech Interaction VR.</p>
+                        <p>Interactive technical training and diagnostic simulators built with the Meta XR SDK at SimTech Interaction VR.</p>
                     </div>
                 </div>
 
@@ -185,7 +209,7 @@
                     <div class="skill-icon">✛</div>
                     <div>
                         <h3>Game Design &amp; Narrative</h3>
-                        <p>Prototipado rápido, diseño de niveles plataformeros, mecánicas de arcade y dirección de atmósfera en Malagueta Game Studio.</p>
+                        <p>Rapid prototyping, platformer level design, arcade mechanics and atmosphere direction at Malagueta Game Studio.</p>
                     </div>
                 </div>
 
@@ -193,7 +217,7 @@
                     <div class="skill-icon">❖</div>
                     <div>
                         <h3>Brand Gamification</h3>
-                        <p>Desarrollo de aplicaciones interactivas y juegos a medida para activaciones comerciales de marcas líderes.</p>
+                        <p>Custom interactive apps and games for commercial activations by leading brands.</p>
                     </div>
                 </div>
             </div>
@@ -202,9 +226,9 @@
                 <div class="gamified-top">
                     <div>
                         <span class="section-pill"><span class="star">✳</span> COMMERCIAL INTERACTIVE</span>
-                        <h3>Experiencias Gamificadas</h3>
+                        <h3>Gamified Experiences</h3>
                     </div>
-                    <p>Aplicaciones jugables desarrolladas para campañas de marcas corporativas, integrando mecánicas accesibles, UI dinámica y métricas de participación.</p>
+                    <p>Playable applications developed for corporate brand campaigns, featuring accessible mechanics, dynamic UI and engagement metrics.</p>
                 </div>
 
                 <div class="gamified-grid">
@@ -220,11 +244,11 @@
 
                     <div class="brand-work-card">
                         <div class="brand-work-thumb">
-                            <img src="img/Altice.png" alt="Altice - Ruleta Digital">
+                            <img src="img/Altice.png" alt="Altice - Digital Roulette">
                         </div>
                         <div class="brand-work-info">
                             <strong>Altice</strong>
-                            <span>Ruleta Digital</span>
+                            <span>Digital Roulette</span>
                         </div>
                     </div>
 
@@ -240,14 +264,31 @@
 
                     <div class="brand-work-card">
                         <div class="brand-work-thumb">
-                            <img src="img/Crisol.png" alt="Crisol - Ruleta de Premios" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <img src="img/Crisol.png" alt="Crisol - Prize Wheel" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <div class="brand-fallback-label" style="display:none;">CRISOL</div>
                         </div>
                         <div class="brand-work-info">
                             <strong>Crisol</strong>
-                            <span>Ruleta de Premios</span>
+                            <span>Prize Wheel</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="edu-section fade-in">
+            <div class="skills-header">
+                <div class="section-pill"><span class="star">✳</span> EDUCATION</div>
+                <h2>ACADEMIC<span>BACKGROUND</span></h2>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-badge">✦</div>
+                <div class="edu-body">
+                    <span class="edu-label">Graduate</span>
+                    <h3>Interactive Simulations &amp; Video Game Development</h3>
+                    <p class="edu-school">ITLA · Instituto Tecnológico de las Américas</p>
+                    <!-- Optional: add the graduation year here, e.g. <p class="edu-school">Class of 20XX</p> -->
                 </div>
             </div>
         </section>
@@ -256,16 +297,16 @@
             <div class="portfolio-header fade-in">
                 <h2><span>✳</span> Selected Works</h2>
                 <div class="filter-bar">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="narrativo">Narrativo</button>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="narrative">Narrative</button>
                     <button class="filter-btn" data-filter="horror">Horror</button>
                     <button class="filter-btn" data-filter="puzzle">Match-3 / Mobile</button>
-                    <button class="filter-btn" data-filter="comercial">Gamificación</button>
+                    <button class="filter-btn" data-filter="commercial">Gamification</button>
                 </div>
             </div>
 
             <div class="project-list-wrap">
-                <article class="project-card fade-in" data-category="narrativo">
+                <article class="project-card fade-in" data-category="narrative">
                     <div class="project-index-col">
                         <span class="asterisk">✳</span>
                         <span>/001</span>
@@ -273,7 +314,7 @@
                     <div class="project-content">
                         <h3>AMNESIA</h3>
                         <p>
-                            Juego independiente narrativo plataformero centrado en la exploración emocional, progresión por niveles, narrativa ambiental y mecánicas de desplazamiento fluido en Unity.
+                            Independent narrative platformer focused on emotional exploration, level-based progression, environmental storytelling and fluid movement mechanics, built in Unity.
                         </p>
                         <ul class="tech-list">
                             <li>Narrative Platformer</li>
@@ -282,7 +323,7 @@
                             <li>Environmental Storytelling</li>
                         </ul>
                         <a href="https://yuli-dev.itch.io/" target="_blank" class="itch-banner-btn">
-                            Jugar en itch.io ↗
+                            Play on itch.io ↗
                         </a>
                     </div>
                     <div class="project-img-box">
@@ -304,7 +345,7 @@
                     <div class="project-content">
                         <h3>TRASTORNO</h3>
                         <p>
-                            Juego de terror psicológico en vista top-down con estética pixel art. Explora un entorno opresivo donde la atmósfera, la iluminación y el sonido construyen la tensión.
+                            Psychological horror game in a top-down view with a pixel art aesthetic. Explore an oppressive environment where atmosphere, lighting and sound build the tension.
                         </p>
                         <ul class="tech-list">
                             <li>Unity 2D Top-Down</li>
@@ -313,7 +354,7 @@
                             <li>Spatial Audio Design</li>
                         </ul>
                         <a href="https://yuli-dev.itch.io/" target="_blank" class="itch-banner-btn">
-                            Ver en itch.io ↗
+                            View on itch.io ↗
                         </a>
                     </div>
                     <div class="project-img-box">
@@ -335,7 +376,7 @@
                     <div class="project-content">
                         <h3>COFFEE RUSH</h3>
                         <p>
-                            Juego móvil de Match-3 ambientado en los campos de la República Dominicana. Combina elementos culturales como la tambora, la güira, el acordeón y grecas para activar súper combos y cosechar café.
+                            Mobile Match-3 game set in the Dominican countryside. It combines cultural elements such as the tambora, the güira, the accordion and traditional patterns to trigger super combos and harvest coffee.
                         </p>
                         <ul class="tech-list">
                             <li>Mobile Match-3 (Android)</li>
@@ -344,7 +385,7 @@
                             <li>Dominican Cultural Theme</li>
                         </ul>
                         <a href="https://yuli-dev.itch.io/" target="_blank" class="itch-banner-btn">
-                            Ver en itch.io ↗
+                            View on itch.io ↗
                         </a>
                     </div>
                     <div class="project-img-box">
@@ -358,15 +399,15 @@
                     </div>
                 </article>
 
-                <article class="project-card fade-in" data-category="comercial">
+                <article class="project-card fade-in" data-category="commercial">
                     <div class="project-index-col">
                         <span class="asterisk">✳</span>
                         <span>/004</span>
                     </div>
                     <div class="project-content">
-                        <h3>EXPERIENCIAS GAMIFICADAS</h3>
+                        <h3>GAMIFIED EXPERIENCES</h3>
                         <p>
-                            Colección de videojuegos y aplicaciones interactivas creadas para marcas como Scotiabank ("Finanzas con Cucharitas"), Altice, Seguro Humano y Crisol.
+                            A collection of video games and interactive applications created for brands such as Scotiabank (“Finanzas con Cucharitas”), Altice, Seguro Humano and Crisol.
                         </p>
                         <ul class="tech-list">
                             <li>Scotiabank &amp; Altice</li>
@@ -375,11 +416,11 @@
                             <li>Unity UI &amp; Gameplay</li>
                         </ul>
                         <a href="https://www.linkedin.com/in/yulianny-guerra-74188b352" target="_blank" class="itch-banner-btn">
-                            Ver trayectoria en LinkedIn ↗
+                            View my career on LinkedIn ↗
                         </a>
                     </div>
                     <div class="project-img-box">
-                        <img src="img/Scotiabank.png" alt="Experiencias Gamificadas">
+                        <img src="img/Scotiabank.png" alt="Gamified Experiences">
                         <div class="img-dots">
                             <span></span>
                             <span></span>
@@ -388,6 +429,31 @@
                         </div>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <section id="spaceforward" class="featured-video fade-in">
+            <div class="featured-copy">
+                <div class="section-pill"><span class="star">✳</span> FEATURED · VR</div>
+                <h2>Spaceforward</h2>
+                <p>A virtual reality game set aboard a spaceship, in the spirit of Malagueta’s games but built for VR. Watch the project video.</p>
+            </div>
+
+            <div class="video-frame">
+                <div class="video-placeholder">
+                    <div class="play">▶</div>
+                    <span>Spaceforward video coming soon</span>
+                </div>
+
+                <!-- Option A: a video file in your repo (put it in a "video" folder). -->
+                <video controls preload="metadata" playsinline>
+                    <source src="video/spaceforward.mp4" type="video/mp4" onerror="this.parentElement.style.display='none'">
+                </video>
+
+                <!-- Option B: YouTube. Delete the <video> block above and uncomment this one,
+                     replacing VIDEO_ID with the ID of your video:
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Spaceforward" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                -->
             </div>
         </section>
 
@@ -402,8 +468,8 @@
 
             <div class="contact-simple-inner">
                 <div class="contact-pill-tag"><span>✳</span> CONTACT ME</div>
-                <h2>HABLEMOS</h2>
-                <p>Disponible para desarrollo de videojuegos en Unity y experiencias interactivas XR/VR.</p>
+                <h2>Let’s Talk</h2>
+                <p>Available for Unity game development and interactive XR/VR experiences.</p>
                 <div class="contact-direct-links">
                     <button type="button" id="copyBtn" onclick="copyEmail()">yuliannysoto4@gmail.com</button>
                     <a href="https://www.linkedin.com/in/yulianny-guerra-74188b352" target="_blank">LinkedIn ↗</a>
@@ -413,6 +479,6 @@
 
     </div>
 
-    <script src="js/script.js?v=6"></script>
+    <script src="js/script.js?v=7"></script>
 </body>
 </html>
